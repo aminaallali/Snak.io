@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Online Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Snake Game Online</h1>
+            <div class="game-info">
+                <div>Score: <span id="score">0</span></div>
+                <div>High Score: <span id="highScore">0</span></div>
+                <div>Speed: <span id="speed">1</span></div>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div class="game-controls">
+                <div class="control-buttons">
+                    <button id="startBtn">Start Game</button>
+                    <button id="pauseBtn" disabled>Pause</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+                
+                <div class="mobile-controls">
+                    <div class="mobile-pad">
+                        <button class="arrow-btn" data-direction="up">↑</button>
+                        <div class="middle-row">
+                            <button class="arrow-btn" data-direction="left">←</button>
+                            <button class="arrow-btn" data-direction="right">→</button>
+                        </div>
+                        <button class="arrow-btn" data-direction="down">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use arrow keys or mobile buttons to control the snake</li>
+                <li>Eat the red food to grow and increase your score</li>
+                <li>Don't hit the walls or your own tail!</li>
+                <li>Speed increases as you grow longer</li>
+            </ul>
+        </div>
+
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button onclick="game.reset()">Play Again</button>
+        </div>
+
+        <div class="multiplayer-section">
+            <h3>🌐 Multiplayer (Coming Soon)</h3>
+            <p>Server features will include:</p>
+            <ul>
+                <li>Real-time multiplayer battles</li>
+                <li>Global leaderboard</li>
+                <li>Player profiles</li>
+                <li>Tournament mode</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
